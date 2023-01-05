@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./style.css";
+import { useState } from "react";
 
-function App() {
+export default function App() {
+  
+  const [count, setCount] = useState(0)
+  function increment(){
+    setCount(count+1)
+  }
+  function decrement(){
+    setCount(count-1)
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hello Everyone!</h1><br/>
+      <h2>This is a simple react app which increase and decrease the count</h2><br/>
+      <h2>Click on the buttons to see the magic!</h2>
+      <br/>
+      
+    <div className="count">{count}</div>
+    <button onClick = {increment}> Increment </button>
+    <button onClick = {decrement}> Decrement </button>
     </div>
   );
 }
-
-export default App;
